@@ -2,13 +2,13 @@
 
 1. Incoming BICISO message successful creation and sending of API  
 
-![Incoming BICISO](../docs/images/scen1_BICISO_IN_OK.png)
+![Incoming BICISO](../images/scen1_BICISO_IN_OK.png)
 
 2. No acknowledgement received from issuer bank
 
-![No ACK](../docs/images/scen2_NoACK.png)
+![No ACK](../images/scen2_NoACK.png)
 
-3. Incoming API message - succesful flow  
+3. Incoming API message - successful flow  
 
 ![Incoming API](../images/scen3_API_IN_OK.png)
 
