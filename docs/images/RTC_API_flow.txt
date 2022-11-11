@@ -1,0 +1,83 @@
+@startuml
+autonumber 
+
+participant "ORIGINATING BANK\n(Debtor)"  as orig
+participant "RTC\nISO8583" as switch
+participant "RTC\nAPI GW" as bsa
+participant "DESTINATION BANK\n(Creditor)" as dest
+
+== ISO8583 to API ==
+group Non-financial
+    orig -> switch : 0200 request
+    switch -> bsa : request
+    group verification request
+    bsa -> dest : verification/request
+    dest --> bsa : ack
+    end
+    group verification response
+    dest -> bsa : verification/response
+    bsa --> dest : ack
+    end
+    bsa -> switch : response 
+    switch -> orig : 0210 response 
+end
+group Financial
+orig -> switch : 0220 request
+    switch -> bsa : request
+    group clearing request
+    bsa -> dest : credit-transfer
+    dest --> bsa : ack
+    end
+    group clearing response
+    dest -> bsa : deliver-status-report
+    bsa --> dest : ack
+    end
+    bsa -> switch : response 
+    switch -> orig : 0230 response
+end
+
+== API to ISO8583 ==
+
+group Non-Financial
+    group verification request
+        orig -> bsa : verification/request
+        bsa --> orig : ack
+    end
+    bsa -> switch :  request
+    switch -> dest : 0200 request
+    dest -> switch : 0210 response
+    group verification response
+        bsa -> orig : verification/response
+        orig -> bsa : ack
+    end
+end
+group Financial
+    group clearing request
+        orig -> bsa : credit-transfer
+        bsa --> orig : ack
+    end
+    bsa -> switch :  request
+    switch -> dest : 0220 request
+    dest -> switch : 0230 response
+    group clearing response
+        bsa -> orig : deliver-status-report
+        orig -> bsa : ack
+    end
+end
+
+== ISO8583 to ISO8583 ==
+
+group Non-Financial
+    orig -> switch : 0200 request
+    switch -> dest : 0200 request
+    dest -> switch : 0210 response
+    switch -> orig : 0210 response
+end
+group Financial
+    orig -> switch : 0220 request
+    switch -> dest : 0220 request
+    dest -> switch : 0230 response
+    switch -> orig : 0230 response
+end   
+
+@enduml

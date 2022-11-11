@@ -2,8 +2,8 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: rpi-portal
-  title: RPI Portal Docs
-  description: External documentation for RPI.
+  title: MPP Portal Docs
+  description: External documentation for MPP.
   annotations:
     github.com/project-slug: ShazBSA/rpi-portal-docs
     backstage.io/techdocs-ref: dir:.

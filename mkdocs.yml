@@ -1,14 +1,14 @@
-site_name: 'AVS Documentation'
+site_name: 'MPP Documentation'
 repo_url: https://github.com/ShazBSA/rpi-portal-docs
 edit_uri: edit/main/docs
 
 nav:
   - Home: index.md
   - Tables: tables.md
-  - Examples: examples.md
-  - Scenarios: scenarios.md
+  - 'AVS Examples': examples.md
+  - 'AVS Scenarios': scenarios.md
   - 'AVS Flow Diagrams': Diagrams/Verification.md
-  - 'AVSB Flow': Diagrams/AVS_BatchFlows.md
+  - 'AVSB Flow Diagrams': Diagrams/AVS_BatchFlows.md
 
 plugins:
   - techdocs-core

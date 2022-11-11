@@ -1,4 +1,4 @@
-# AVS
+# API interface for AVS & RTC
 
 ## Account Verification Service
 
@@ -10,6 +10,18 @@ The API endpoints described here will allow a participant to:
 
 + Verify customer account and identification details, this may include name, ID number, mobile number, bank account details and status of account as well as email address. (Possible verification of address not currently included). This will provide and interface to the existing Account Verification Service (AVS) currently provided by BankservAfrica.  
 + Perform a health check to determine the status of the Verification Service.
+
+## RTC Service
+
+This RTC Service API Specification describes the API flows and payloads used by BankservAfrica in order to process a real-time credit transfer.
+
+The Real Time Credit’s system (RTC) comprises of two legs, the first leg being a non-financial leg which checks the validity of an account prior to the processing of the credit transfer, while the second leg in the process performs the actual real time credit transfer.
+
+The endpoints described here will allow a participant to:
++ Perform a validation check on an account prior to processing a real-time credit transfer, similar to the existing non-financial leg in RTC currently, and
++ Process a real time credit transfer transaction between themselves as the debtor bank and the creditor
+
+This service is similar to the existing RTC system currently provided by BankservAfrica – and may be used in conjunction with or instead of the current RTC system.
 
 ### Using the API
 
