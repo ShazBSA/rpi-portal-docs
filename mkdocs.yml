@@ -9,6 +9,7 @@ nav:
   - 'AVS Scenarios': scenarios.md
   - 'AVS Flow Diagrams': Diagrams/Verification.md
   - 'AVSB Flow Diagrams': Diagrams/AVS_BatchFlows.md
+  - 'RTC Flow Diagram': Diagrams/RTC.md
 
 plugins:
   - techdocs-core

@@ -92,11 +92,10 @@ Should, for example, the email details not match those as held by the receiving 
   "name_match": "Y",
   "older_than_three_months": "U"
 }
-````  
+```  
 
-
-# AVS Batch 
-
+# AVS Batch
+ 
 The AVS Batch system allows for a group (batch) of transactions to be sent for validation.  
 The sending bank will send a batch of records to be validated, BankservAfrica then split the incoming batch into files (or API messages) for validation at each of the different receiving banks.  
 
@@ -117,9 +116,9 @@ BBB0001D
 14000000304000000620201020TEST210007DSB20201020         9000015521021000105100100000000000000028609891128211036020084LG   KLEYNHANS                                                   OPENYYY                                                                                                                     YYYYYNBAAN001D
 980000004TEST000000000000020000000000000040000000010
 9920201020AVS TO VERIFY 00010000060000999900000000000000000000000000000000000000000000
- ```
+ ```  
 
- POST /v1alpha1/avsb/request  
+ POST /v1alpha1/avsb/request   
 
  ```json
  {
@@ -166,5 +165,6 @@ BBB0001D
   ]
 }
 ```  
+
 
 
