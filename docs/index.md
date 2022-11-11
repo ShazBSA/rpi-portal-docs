@@ -1,55 +1,49 @@
-# Welcome!
+# Getting Started
 
-This is a basic example of documentation. It is intended as a showcase of some of the
-features that TechDocs provides out of the box.
+---
 
-You can see also:
+## Verification Service
 
-- [A sub page](sub-page.md)
-- [Inline code examples](code/code-sample.md)
-- [Plugin & Extension examples](extensions.md) - Diagrams, emojis, visual formatting.
+This Verification Service API Documentation describes the flows and payloads used by BankservAfrica in order to verify account information.
 
-## Basic Markdown
+The Verification Service will verify the accuracy or validity of any information sent in the request message.
 
-Headings:
+The API endpoints described here will allow a participant to:
 
-# h1
++ Verify customer account and identification details, this may include name, ID number, mobile number, bank account details and status of account as well as email address. (Possible verification of address not currently included). This will provide and interface to the existing Account Verification Service (AVS) currently provided by BankservAfrica.  
++ Perform a health check to determine the status of the Verification Service.
 
-## h2
+### Using the API
 
-### h3
+Browse the reference section of this site to see examples of what you can do with this API and how to use it. You can use the **Try this API** tool on the right side of an API method page to generate a sample request.
 
-#### h4
+### Design Principles
 
-##### h5
+All APIs are designed to be asynchronous. The sender of the message will receive a synchronous HTTP response to their request, but the verification response message will be asynchronous.  
+This makes the API calls more efficient as queues do not need to be maintained and the sender of the message does not need to wait for a response, this also reduces the need to cater for timeouts and subsequent re-tries.
 
-###### h6
+### Standards
 
-Here is a bulleted list:
+Where possible, field names and sizes within the payload have been aligned to ISO20022. In certain instances field lengths have been adjusted in order to ensure compatibility with ISO8583.
 
-- Item one
-- Item two
-- Item Three
+### Version Control
 
-Check out the [Markdown Guide](https://www.markdownguide.org/) to learn more about how to
-simply create documentation.
+The API version will be contained in the corresponding Swagger documentation and will be reflected in the path of the API call eg. /**v1**/creditorVerificationRequest/{instructingAgent}
+API versioning will be as follows:  
+| Version name | Implementation description  |  
+| ------------ | ----------------------------|
+| v1alpha      | Initial alpha version, this version is subject to change without notification |
+| v1beta  | Initial beta version, this version may be changed based on input from external participants (banks). Changes will first be communicated to all involved parties, before being applied |  
+| v1.0 - major version | Major versions will be indicated by the integer portion of the version number. Major version numbers will begin at 1 and increment by 1 for each subsequent version. A new major version will be released for changes such as a new message or message name change. |
+| v1.1 - subversion | Minor versions will be indicated by the value as contained after the decimal point in the version number. Minor version changes will be of such a nature that both newer versions and older versions can be handled by , this means that changes will most likely only be the addition or deprecation of fields within the payload.
+| |NOTE: In order to facilitate the support for different minor versions the minor version number will be contained in the payload and not in the URI.
 
-You can also learn more about how to configure and setup this documentation in Backstage,
-[read up on the TechDocs Overview](https://backstage.io/docs/features/techdocs/techdocs-overview).
+Depending on the nature of the change from one major version to another, it may or may not be possible to support multiple versions. Should multiple versions be supported, the older version will only be supported for a maximum of 3 months post implementation of the new version.
 
-## Image Example
+Details of any notable changes can be found in the Changelog
 
-This documentation is powered by Backstage's TechDocs feature:
+## Link to swagger
 
-![Backstage Logo](images/backstage-logo-cncf.svg)
+[AVSswagger.json](http://dev-avs.endpoints.bsarpi.cloud.goog/v1beta1/verification/swagger.json)
 
-## Table Example
-
-While this documentation isn't comprehensive, in the future it should cover the following
-topics outlined in this example table:
-
-| Topic   | Description                                                  |
-| ------- | ------------------------------------------------------------ |
-| Topic 1 | An introductory topic to help you learn about the component. |
-| Topic 2 | A more detailed topic that explains more information.        |
-| Topic 3 | A final topic that provides conclusions and lessons learned. |
+[AVSBswagger.json](http://dev-avs.endpoints.bsarpi.cloud.goog/v1alpha1/avsb/swagger.json)

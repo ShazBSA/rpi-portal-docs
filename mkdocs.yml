@@ -1,12 +1,13 @@
 site_name: 'MPP Documentation'
 repo_url: https://github.com/ShazBSA/rpi-portal-docs
-edit_uri: /docs
+edit_uri: edit/main/docs
 
 nav:
   - Home: index.md
   - Subpage: sub-page.md
   - 'Code Sample': code/code-sample.md
   - Extensions: extensions.md
+  - Examples: examples.md
 
 plugins:
   - techdocs-core
