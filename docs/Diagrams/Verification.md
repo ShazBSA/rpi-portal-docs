@@ -1,6 +1,6 @@
 # Verification  
 
-![Verification Flow](/images/Flow.png)  
+![Verification Flow](../images/Flow.png)  
 
 ## Verification Service
 

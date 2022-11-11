@@ -2,7 +2,7 @@
 
 ### Request Messages
 
-![AVS Batch Request Flow Diagram](/images/AVS_Batch-Request.png)
+![AVS Batch Request Flow Diagram](../images/AVS_Batch-Request.png)
 
 * Bank A sends a file, containing multiple AVS transactions to be validated, to BankservAfrica.  
 * BankservAfrica validates the file and creates new files for each of the issuing participants for the verification of these transactions by the receiving banks.  
@@ -12,7 +12,7 @@ The header record within the JSON payload of the API message will indicated the 
 
 ### Response Messages
 
-![AVS Batch Response Flow Diagram](/images/AVS_Batch-Response.png)
+![AVS Batch Response Flow Diagram](../images/AVS_Batch-Response.png)
 
 * The receiving participants verify the transactions and send their responses back to BankservAfrica in the relevant files (one response file for each request file received) within the defined SLA time period.
 * API participant banks will send their responses to BankservAfrica in a JSON message as defined in this document.
@@ -21,7 +21,7 @@ The header record within the JSON payload of the API message will indicated the 
 
 ### API Batch Request Messages  
 
-![AVS incoming API Batch Request Flow Diagram](/images/AVS_API_Batch-request.png)
+![AVS incoming API Batch Request Flow Diagram](../images/AVS_API_Batch-request.png)
 
 * Bank A, (an API participant bank) sends a batch of transactions for validation to the BankservAfrica API Gateway.
 * BankservAfrica creates a corresponding BAXXnnnD  file which is passed to the current AVS Batch processing system.
@@ -29,7 +29,7 @@ The header record within the JSON payload of the API message will indicated the 
 
 ### API Batch Response Messages
 
-![AVS incoming API Batch Response Flow Diagram](/images/AVS_API_Batch-response.png)
+![AVS incoming API Batch Response Flow Diagram](../images/AVS_API_Batch-response.png)
 
 * The receiving participants verify the transactions and send their responses back to BankservAfrica in the relevant files (one response file for each request file received), within the defined SLA time period.
 * All the responses will then be consolidated by BankservAfrica into a BGXXnnnD file.
