@@ -1,4 +1,4 @@
 # RTC  
 
-![RTC Flow](/images/RTC_API_flow.png)  
+![RTC Flow](../images/RTC_API_flow.png)  
 
