@@ -1,8 +1,9 @@
 # Getting Started
 
 ---
+# AVS
 
-## Verification Service
+## Account Verification Service
 
 This Verification Service API Documentation describes the flows and payloads used by BankservAfrica in order to verify account information.
 
@@ -30,6 +31,7 @@ Where possible, field names and sizes within the payload have been aligned to IS
 
 The API version will be contained in the corresponding Swagger documentation and will be reflected in the path of the API call eg. /**v1**/creditorVerificationRequest/{instructingAgent}
 API versioning will be as follows:  
+
 | Version name | Implementation description  |  
 | ------------ | ----------------------------|
 | v1alpha      | Initial alpha version, this version is subject to change without notification |

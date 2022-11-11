@@ -4,10 +4,11 @@ edit_uri: edit/main/docs
 
 nav:
   - Home: index.md
-  - Subpage: sub-page.md
-  - 'Code Sample': code/code-sample.md
-  - Extensions: extensions.md
+  - Tables: tables.md
   - Examples: examples.md
+  - Scenarios: scenarios.md
+  - Extensions: extensions.md
+  - 'Code Sample': code/code-sample.md
 
 plugins:
   - techdocs-core
